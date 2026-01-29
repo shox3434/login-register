@@ -8,7 +8,7 @@ Container = document.querySelector("#Container")
 btn.addEventListener("click", (e) =>{
     e.preventDefault()
 
-    fetch("http://127.0.0.1:8000/api")
+    fetch("https://login-register-5w9c.onrender.com/api")
     .then(res=>res.json())
     .then(data =>{
         console.log(data);

@@ -29,6 +29,13 @@ class Login(BaseModel):
     email:EmailStr
     password:str
     
+class Tamplete(BaseModel):
+    img:str
+    title:str
+    description:str
+    color:str
+    price:int
+    
 users = [{
     "id":1,
     "name":"Arslon",
@@ -37,6 +44,8 @@ users = [{
 }]
 
 user_collect=[]
+announcement_collect = []
+
 @app.get('/api')
 def getFunc():
     return users
@@ -62,7 +71,6 @@ def deleteUser(user_id:int):
             users.remove(user)
             return user_id
     return f"qanadaydir xatolik bor {user}"
-
 @app.post('/api-register')
 def registerUser(user:Register):
     for us in user_collect:
@@ -81,10 +89,7 @@ def registerUser(user:Register):
         "data": {
             "id": new_user_data["id"],
             "token": new_user_data["token"]}
-        }
-
-
-        
+        }     
 @app.post('/api-login')
 def loginUser(user:Login):
     for us in user_collect  :
@@ -95,3 +100,8 @@ def loginUser(user:Login):
                 "token": us["token"]  # MANA SHU QATORNI QO'SHING!
             }
     raise HTTPException(status_code=(400), detail="login yoki parol xato")
+
+app.post('/api-create-announcement')
+def createAnnouncement(template:Tamplete):
+    announcement_collect.append(template)
+    return announcement_collect

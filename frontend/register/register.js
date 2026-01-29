@@ -11,7 +11,7 @@ Send.addEventListener("click", (e) => {
         password:InpPasswor.value
     }
 
-    fetch('http://127.0.0.1:8000/api-register',{
+    fetch('https://login-register-5w9c.onrender.com/api-register',{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
