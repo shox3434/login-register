@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#headers {
+    margin-bottom: 24px;
+    max-width: 400px;
+    text-align: center;
+}
+
+#headers h1 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#register {
+    width: 448px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+input {
+    height: 54px;
+    padding: 13px 15px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #1a73e8;
+}
+
+#Send {
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    align-self: flex-end; /* Tugmani o'ngga surish (Google uslubi) */
+}
+
+#loginPage {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+#loginPage a {
+    color: #1a73e8;
+    text-decoration: none;
+}

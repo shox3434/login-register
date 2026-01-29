@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Markazlashtiruvchi konteyner */
+.wrapper {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#headers {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#headers h1 {
+    font-size: 24px;
+    color: #202124;
+    font-weight: 500;
+}
+
+#headers p {
+    color: #5f6368;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+/* Oq forma */
+#register {
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Inputlar orasidagi bir xil masofa */
+}
+
+input {
+    width: 100%;
+    height: 45px;
+    padding: 10px 15px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-size: 15px;
+    transition: border 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #1a73e8;
+}
+
+#Send {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#Send:hover {
+    background-color: #1557b0;
+}
+
+#loginPage {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#loginPage h1 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #5f6368;
+}
+
+#loginPage a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+}
