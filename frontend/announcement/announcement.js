@@ -9,15 +9,15 @@ Send.addEventListener("click", (e) => {
     e.preventDefault()
 
     let announcement = {
-    "img":str,
-    "title":str,
-    "description":str,
-    "color":str,
-    "price":int
+    "img":InpImg.value,
+    "title":InpTitle.value,
+    "description":InpDescription.value,
+    "color":InpPcolor.value,
+    "price":InpPrice
     
     }
 
-    fetch('https://login-register-5w9c.onrender.com/api-create-announcemen',{
+    fetch('https://login-register-5w9c.onrender.com/api-create-announcement',{
         method:"POST",
         headers:{
             "Content-Type":"application/json"

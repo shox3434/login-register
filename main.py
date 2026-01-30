@@ -101,7 +101,7 @@ def loginUser(user:Login):
             }
     raise HTTPException(status_code=(400), detail="login yoki parol xato")
 
-app.post('/api-create-announcement')
+@app.post('/api-create-announcement')
 def createAnnouncement(template:Tamplete):
-    announcement_collect.append(template)
+    announcement_collect.append(template.dict())
     return announcement_collect
