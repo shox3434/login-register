@@ -110,3 +110,14 @@ def createAnnouncement(template:Tamplete):
     announcement_collect.append(new_add)
     
     return announcement_collect
+
+@app.delete('/api-create-announcement-delete/{item_id}')
+def delete_announcement(item_id: str):
+    global announcement_collect
+    
+    initial_length = len(announcement_collect)
+    announcement_collect = [item for item in announcement_collect if str(item.get("id")) != item_id]
+    
+    if len(announcement_collect) == initial_length:
+        return {"status": "error", "message": "E'lon topilmadi"}
+    return {"status": "success", "message": "E'lon ochirildi", "all_ads": announcement_collect}
