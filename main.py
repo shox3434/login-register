@@ -1,8 +1,9 @@
 from fastapi import FastAPI,HTTPException
-from pydantic import BaseModel,EmailStr
+from pydantic import BaseModel,EmailStr,Field
 from fastapi.middleware.cors import CORSMiddleware
-import uuid
+from uuid import UUID, uuid4
 import secrets
+from typing import List
 
 app = FastAPI()
 
@@ -30,6 +31,7 @@ class Login(BaseModel):
     password:str
     
 class Tamplete(BaseModel):
+    id: UUID = Field(default_factory=uuid4)
     img:str
     title:str
     description:str
@@ -79,7 +81,7 @@ def registerUser(user:Register):
     new_user_data = user.dict()
     
     # 3. AVTOMATIK ID VA TOKEN BERISH
-    new_user_data["id"] = str(uuid.uuid4())[:8] # Unikal 8 talik ID (masalan: 'a1b2c3d4')
+    new_user_data["id"] = str(uuid4())[:8] # Unikal 8 talik ID (masalan: 'a1b2c3d4')
     new_user_data["token"] = secrets.token_hex(16) # Xavfsiz 32 talik token
     
     user_collect.append(new_user_data)
@@ -103,5 +105,8 @@ def loginUser(user:Login):
 
 @app.post('/api-create-announcement')
 def createAnnouncement(template:Tamplete):
-    announcement_collect.append(template.dict())
-    return announcement_collect
+    new_add = template.dict()
+    
+    announcement_collect.append(new_add)
+    
+    return {"status": "success", "template": new_add}
