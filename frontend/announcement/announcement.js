@@ -4,7 +4,7 @@ let InpDescription = document.querySelector("#InpDescription"); // ID to'g'rilan
 let InpPcolor = document.querySelector("#InpPcolor"); // ID to'g'rilandi
 let InpPrice = document.querySelector("#InpPrice"); // ID to'g'rilandi
 let Send = document.querySelector("#Send");
-let list = document.querySelector("#announcement-list");erySelector("#announcement-list");
+let list = document.querySelector("#announcement-list")
 
 
 Send.addEventListener("click", (e) => {

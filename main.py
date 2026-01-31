@@ -109,4 +109,4 @@ def createAnnouncement(template:Tamplete):
     
     announcement_collect.append(new_add)
     
-    return {"status": "success", "template": new_add}
+    return announcement_collect
